@@ -111,10 +111,15 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       Menuitem(
                         icon: Icons.person,
                         title: "My Account",
+
                       ),
                       Menuitem(
-                        icon: Icons.shopping_basket,
-                        title: "Shop",
+                        icon: Icons.payment,
+                        title: "Payment",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.PaymentsEvent);
+                        },
                       ),
                       Menuitem(
                         icon: Icons.people,
